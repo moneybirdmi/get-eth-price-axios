@@ -1,17 +1,9 @@
 const axios = require("axios");
 
 const init = async () => {
-  // Make a request for a user with a given ID
-  axios
-    .get("https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=ETH")
-    .then(function (response) {
-      // handle success
-      console.log(response);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    });
+  const url = "https://min-api.cryptocompare.com/data/price?fsym=USD&tsyms=ETH";
+  const response = await axios.get(url);
+  console.log(response.data.ETH);
 };
 
 init();
